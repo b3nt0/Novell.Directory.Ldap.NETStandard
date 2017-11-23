@@ -653,9 +653,9 @@ namespace Novell.Directory.Ldap
                 bool found = false;
                 for (var j = 0; j < subTypes.Count; j++)
                 {
-                    if (subTypes.ElementAt(j) == null)
+                    if (subTypes[j] == null)
                         throw new ArgumentNullException($"subtype at array index {j} cannot be null");
-                    if (subTypes.ElementAt(j).ToUpper().Equals(subtypes[i].ToUpper()))
+                    if (subTypes[j].ToUpper().Equals(subtypes[i].ToUpper()))
                     {
                         found = false;
                         break;
