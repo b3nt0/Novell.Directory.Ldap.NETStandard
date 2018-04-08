@@ -103,7 +103,7 @@ namespace Novell.Directory.Ldap.Utilclass
                     {
                         if (st2.lastttype == (int)TokenTypes.WORD)
                         {
-                            if (st2.StringValue.Equals("NAME", StringComparison.InvariantCultureIgnoreCase))
+                            if (st2.StringValue.Equals("NAME", (StringComparison)StringComparisonEx.InvariantCultureIgnoreCase))
                             {
                                 if (st2.NextToken() == '\'')
                                 {

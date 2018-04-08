@@ -457,7 +457,7 @@ namespace Novell.Directory.Ldap.Utilclass
                 currChar = dnString[++currIndex];
             if (char.IsLetter(currChar))
             {
-                if (dnString.Substring(currIndex).StartsWith("oid.", StringComparison.InvariantCultureIgnoreCase))
+                if (dnString.Substring(currIndex).StartsWith("oid.", (StringComparison)StringComparisonEx.InvariantCultureIgnoreCase))
                 {
                     //form is "oid.###.##.###... or OID.###.##.###...
                     currIndex += 4; //skip oid. prefix and get to actual oid

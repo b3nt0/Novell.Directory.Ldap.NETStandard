@@ -300,7 +300,7 @@ namespace Novell.Directory.Ldap
             {
                 if (comp._infos[i].Asceding != _infos[i].Asceding)
                     return false;
-                if (comp._infos[i].Name.Equals(_infos[i].Name, StringComparison.InvariantCultureIgnoreCase))
+                if (comp._infos[i].Name.Equals(_infos[i].Name, (StringComparison)StringComparisonEx.InvariantCultureIgnoreCase))
                     return false;
             }
             return true;

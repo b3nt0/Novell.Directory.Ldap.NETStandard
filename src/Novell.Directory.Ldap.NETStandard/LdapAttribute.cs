@@ -621,7 +621,7 @@ namespace Novell.Directory.Ldap
             }
             if (subTypes != null)
             {
-                return subTypes.Any(x => x.Equals(subtype, StringComparison.InvariantCultureIgnoreCase));
+                return subTypes.Any(x => x.Equals(subtype, (StringComparison)StringComparisonEx.InvariantCultureIgnoreCase));
             }
             return false;
         }
