@@ -49,7 +49,7 @@ namespace Novell.Directory.Ldap
     /// </seealso>
     /// <seealso cref="LdapConstraints.SetControls">
     /// </seealso>
-    public class LdapControl : ICloneable
+    public class LdapControl
     {
         /// <summary>
         ///     Returns the identifier of the control.

@@ -43,7 +43,7 @@ namespace Novell.Directory.Ldap
     /// </summary>
     /// <seealso cref="LdapConnection.Constraints">
     /// </seealso>
-    public class LdapConstraints : ICloneable
+    public class LdapConstraints
     {
         /// <summary>
         ///     Returns the maximum number of referrals to follow during automatic

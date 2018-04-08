@@ -69,7 +69,7 @@ namespace Novell.Directory.Ldap.Asn1
     ///         1 1 1 1 1 (> 30) multiple octet tag, more octets follow
     ///     </pre>
     /// </summary>
-    public class Asn1Identifier : ICloneable
+    public class Asn1Identifier
     {
         /// <summary>
         ///     Returns the CLASS of this Asn1Identifier as an int value.

@@ -54,7 +54,7 @@ namespace Novell.Directory.Ldap
     /// </seealso>
     /// <seealso cref="LdapModification">
     /// </seealso>
-    public class LdapAttribute : IComparable, ICloneable
+    public class LdapAttribute : IComparable
     {
         private class URLData
         {

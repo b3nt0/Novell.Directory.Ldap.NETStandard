@@ -40,7 +40,7 @@ namespace Novell.Directory.Ldap
     /// </summary>
     /// <seealso cref="LdapConnection.ExtendedOperation">
     /// </seealso>
-    public class LdapExtendedOperation : ICloneable
+    public class LdapExtendedOperation
     {
 
         /// <summary>

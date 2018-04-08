@@ -50,7 +50,7 @@ namespace Novell.Directory.Ldap
     /// </seealso>
     /// <seealso cref="LdapEntry">
     /// </seealso>
-    public class LdapAttributeSet : ICollection<LdapAttribute>,  ICloneable
+    public class LdapAttributeSet : ICollection<LdapAttribute>
     {
         /// <summary>
         ///     Returns the number of attributes in this set.
