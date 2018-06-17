@@ -167,13 +167,12 @@ namespace Novell.Directory.Ldap
 
                 if (attrName.ToUpper().Equals(SchemaTypeNames[ObjectClass].ToUpper()))
                 {
-                    LdapObjectClassSchema classSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
+                        LdapObjectClassSchema classSchema;
                         try
                         {
-                            classSchema = new LdapObjectClassSchema(valueRenamed);
+                            classSchema = new LdapObjectClassSchema(stringValue);
                         }
                         catch (Exception e)
                         {
@@ -186,13 +185,12 @@ namespace Novell.Directory.Ldap
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[Attribute].ToUpper()))
                 {
-                    LdapAttributeSchema attrSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
+                        LdapAttributeSchema attrSchema;
                         try
                         {
-                            attrSchema = new LdapAttributeSchema(valueRenamed);
+                            attrSchema = new LdapAttributeSchema(stringValue);
                         }
                         catch (Exception e)
                         {
@@ -205,61 +203,49 @@ namespace Novell.Directory.Ldap
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[Syntax].ToUpper()))
                 {
-                    LdapSyntaxSchema syntaxSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        syntaxSchema = new LdapSyntaxSchema(valueRenamed);
+                        var syntaxSchema = new LdapSyntaxSchema(stringValue);
                         AddElement(Syntax, syntaxSchema);
                     }
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[Matching].ToUpper()))
                 {
-                    LdapMatchingRuleSchema matchingRuleSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        matchingRuleSchema = new LdapMatchingRuleSchema(valueRenamed, null);
+                        var matchingRuleSchema = new LdapMatchingRuleSchema(stringValue, null);
                         AddElement(Matching, matchingRuleSchema);
                     }
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[MatchingUse].ToUpper()))
                 {
-                    LdapMatchingRuleUseSchema matchingRuleUseSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        matchingRuleUseSchema = new LdapMatchingRuleUseSchema(valueRenamed);
+                        var matchingRuleUseSchema = new LdapMatchingRuleUseSchema(stringValue);
                         AddElement(MatchingUse, matchingRuleUseSchema);
                     }
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[Ditcontent].ToUpper()))
                 {
-                    LdapDitContentRuleSchema dItContentRuleSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        dItContentRuleSchema = new LdapDitContentRuleSchema(valueRenamed);
+                        var dItContentRuleSchema = new LdapDitContentRuleSchema(stringValue);
                         AddElement(Ditcontent, dItContentRuleSchema);
                     }
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[Ditstructure].ToUpper()))
                 {
-                    LdapDitStructureRuleSchema dItStructureRuleSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        dItStructureRuleSchema = new LdapDitStructureRuleSchema(valueRenamed);
+                        var dItStructureRuleSchema = new LdapDitStructureRuleSchema(stringValue);
                         AddElement(Ditstructure, dItStructureRuleSchema);
                     }
                 }
                 else if (attrName.ToUpper().Equals(SchemaTypeNames[NameForm].ToUpper()))
                 {
-                    LdapNameFormSchema nameFormSchema;
-                    while (enumString.MoveNext())
+                    foreach (var stringValue in attr.StringValues)
                     {
-                        valueRenamed = (string)enumString.Current;
-                        nameFormSchema = new LdapNameFormSchema(valueRenamed);
+                        var nameFormSchema = new LdapNameFormSchema(stringValue);
                         AddElement(NameForm, nameFormSchema);
                     }
                 }
