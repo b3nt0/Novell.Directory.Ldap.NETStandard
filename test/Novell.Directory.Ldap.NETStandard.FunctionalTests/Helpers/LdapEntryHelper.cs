@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using FluentAssertions;
 using Xunit;
 
 namespace Novell.Directory.Ldap.NETStandard.FunctionalTests.Helpers
@@ -49,7 +48,7 @@ namespace Novell.Directory.Ldap.NETStandard.FunctionalTests.Helpers
                 }
 
                 var actualAttribute = actualAttributeSet.GetAttribute(expectedAttribute.Name);
-                Assert.True(actualAttribute.ByteValues.SequenceEqual(expectedAttribute.ByteValues));
+                actualAttribute.ByteValues.Should().BeEquivalentTo(expectedAttribute.ByteValues);
             }
         }
     }
