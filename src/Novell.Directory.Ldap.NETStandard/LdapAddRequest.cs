@@ -114,10 +114,9 @@ namespace Novell.Directory.Ldap
             {
                 var attr = (LdapAttribute)itr.Current;
                 var vals = new Asn1SetOf(attr.Size());
-                var attrEnum = attr.ByteValues;
-                while (attrEnum.MoveNext())
+                foreach (var byteValue in attr.ByteValues)
                 {
-                    vals.Add(new RfcAttributeValue((sbyte[])attrEnum.Current));
+                    vals.Add(new RfcAttributeValue((sbyte[])byteValue));
                 }
 
                 attrList.Add(new RfcAttributeTypeAndValues(new RfcAttributeDescription(attr.Name), vals));

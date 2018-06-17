@@ -32,6 +32,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -201,8 +202,6 @@ namespace Novell.Directory.Ldap
                     var ibytes = encoder.GetBytes(attrStrings[i]);
                     var sbytes = SupportClass.ToSByteArray(ibytes);
                     Add(sbytes);
-
-// this.add(attrStrings[i].getBytes("UTF-8"));
                 }
                 catch (IOException e)
                 {
@@ -219,7 +218,7 @@ namespace Novell.Directory.Ldap
         ///     Note: All string values will be UTF-8 encoded. To decode use the
         ///     String constructor. Example: new String( byteArray, "UTF-8" );.
         /// </returns>
-        public IEnumerator ByteValues => new ArrayEnumeration(ByteValueArray);
+        public IReadOnlyList<sbyte[]> ByteValues => new List<sbyte[]>(ByteValueArray);
 
         /// <summary>
         ///     Returns an enumerator for the string values of an attribute.
@@ -227,7 +226,7 @@ namespace Novell.Directory.Ldap
         /// <returns>
         ///     The string values of an attribute.
         /// </returns>
-        public IEnumerator StringValues => new ArrayEnumeration(StringValueArray);
+        public IReadOnlyList<string> StringValues => new List<string>(StringValueArray);
 
         /// <summary>
         ///     Returns the values of the attribute as an array of bytes.
